@@ -1,0 +1,17 @@
+_site/*
+_theme_packages/*
+_process/*
+_output/*
+regions/*
+Thumbs.db
+.DS_Store
+!.gitkeep
+.rbenv-version
+.rvmrc
+.Rproj.user
+.Rhistory
+404.html
+History.markdown
+pocketbook_web.Rproj
+datasets
+figs
