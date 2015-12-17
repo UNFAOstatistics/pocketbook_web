@@ -4,6 +4,7 @@ title:  "`r paste(region_name)`"
 group: "`r paste(publication_year)`"
 ---
 
+`r paste0('<div class="page-header"><h2 id="">',region_name,'</h2></div>')`
 
 `r paste0('<a href="http://koti.kapsi.fi/~muuankarski/fao/RSPB15/syb_main_',region_to_report,'.pdf"><img src="/logo/thumb_',region_to_report,'.jpg" title="Download pdf" style="float:right; style="margin:4px" /></a>')`
 
@@ -46,7 +47,7 @@ foreword_edited <- str_replace_all(fwd, "\\{textbf\\{color\\{part4\\} Environmen
 
 cat(paste0(
 "
-## Foreword
+# Foreword
 
 
 ",
@@ -75,7 +76,7 @@ foreword_edited,
 ```
 
 
-## Classification of countries
+# Classification of countries
 
 ```{r  overview, fig.width=11.5, fig.height= 8}
 

@@ -4,7 +4,9 @@ title:  The setting
 group: "`r paste0("page_",region_to_report)`"
 ---
 
-"`r paste0('<p style="font-size: 350%;">',region_name,'</p>')`"
+`r paste0('<div class="page-header"><h2 id="">',region_name,'</h2></div>')`
+
+
 
 
 <!-- %

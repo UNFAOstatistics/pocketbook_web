@@ -4,20 +4,11 @@ title:  Notes
 group: "`r paste0("meta_page_",region_to_report)`"
 ---
 
-"`r paste0('<p style="font-size: 350%;">',region_name,'</p>')`"
+`r paste0('<div class="page-header"><h2 id="">',region_name,'</h2></div>')`
 
 
 ```{r}
-library(xtable)
-print(
-  xtable(mtcars, caption = "caption here"),
-  html.table.attributes = 'class="table table-striped table-hover"',
-  floating=FALSE,
-  type = "html", table.placement = NULL,
-  booktabs = TRUE,
-  include.rownames = FALSE,
-  size = tbl_font_size,
-  caption.placement = "top"
-  )
+source(paste0(root.dir,"input/code/code_notes.R"))
+
 ```
 

@@ -18,11 +18,11 @@ regionS_to_report <- c(
                       ,"RNE" # Near East and North Africa
                       ,"GLO" # Global
                       ,"COF" # Coffee
-)
+ )
 
 # Parts to include/exclude
 # -------------------------------
-include_covers       <- F
+include_covers       <- T
 include_timestamp    <- T
 include_disclaimer   <- T
 include_foreword     <- T
