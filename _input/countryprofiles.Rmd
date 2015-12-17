@@ -4,6 +4,7 @@ title:  Country Profiles
 group: "`r paste0("meta_page_",region_to_report)`"
 ---
 
+"`r paste0('<p style="font-size: 350%;">',region_name,'</p>')`"
 
 
 ```{r}

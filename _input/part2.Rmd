@@ -4,7 +4,7 @@ title:  Hunger dimensions
 group: "`r paste0("page_",region_to_report)`"
 ---
 
-
+"`r paste0('<p style="font-size: 350%;">',region_name,'</p>')`"
 
 <!--
 %
