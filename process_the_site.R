@@ -4,6 +4,8 @@
 # -- delete output/ -folder recursively
 unlink(paste0(root.dir.web,"/_process"), recursive = TRUE)
 unlink(paste0(root.dir.web,"/regions/"), recursive = TRUE)
+unlink(paste0(root.dir.web,"/datasets/"), recursive = TRUE)
+unlink(paste0(root.dir.web,"/figs/"), recursive = TRUE)
 
 
 # -- Create output folder if not exists --- #

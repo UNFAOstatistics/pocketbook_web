@@ -47,34 +47,32 @@ foreword_edited <- str_replace_all(fwd, "\\{textbf\\{color\\{part4\\} Environmen
 
 cat(paste0(
 "
-# Foreword
+<h1>Foreword</h1>
 
 
 ",
 foreword_edited,
 "
-</br>
-</br>
+<br>
+<br>
 
 <center>
-",
+<b>",
         pref_d[pref_d$id %in% region_to_report,"person1_name"],
-"
-</br>
-",
+"</b>\n <br> \n <i>",
         pref_d[pref_d$id %in% region_to_report,"person1_title"],
-"
-</br>
-</br>"
+"</i>\n <br>
+<br> \n <b>"
 ,
         pref_d[pref_d$id %in% region_to_report,"person2_name"],
-"</br>
+"</b> \n <br> <i>
 ",
         pref_d[pref_d$id %in% region_to_report,"person2_title"],
-"</center>"
+"</i> \n </center>"
 ))
 ```
 
+****
 
 # Classification of countries
 
@@ -127,9 +125,9 @@ p <- ggplot(data=overview.df, aes(long,lat,group=group))
 p <- p + geom_path(data = gr_rob, aes(long, lat, group = group, fill = NULL),
               linetype = "solid", color = "grey80", alpha=.5)
 # Grey for the non-data regions
-p <- p + geom_polygon(data=the_whole, fill="grey50", colour = alpha("white", 1/2), size=.4, guide = FALSE)
+p <- p + geom_polygon(data=the_whole, fill="grey50", colour = alpha("white", 1/2), size=.4, show.legend = FALSE)
 p <- p + geom_polygon(aes(fill = subgroup), colour = NA)
-p <- p + geom_polygon(fill=NA,colour = alpha("white", 1/2), size=.4, guide = FALSE)
+p <- p + geom_polygon(fill=NA,colour = alpha("white", 1/2), size=.4, show.legend = FALSE)
 # p <- p + scale_fill_manual(values=plot_colors(part = syb_part, length(unique(overview.df$subgroup)))[["Sub"]])
 # p <- p + scale_fill_manual(values=c("#964B00", # Brown
 #                                     "#A52A2A", # Red-Brown
