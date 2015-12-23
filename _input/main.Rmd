@@ -165,10 +165,8 @@ p
 ```{r overview_table, eval=include_overview_tbl, results='asis', cache=cache_overview_tbl}
 
 # Add region key and subset
-if (!(region_to_report %in% c("GLO","COF"))) overview.df <- overview.df[which(overview.df[[region_to_report]]),]
-if (region_to_report %in% "GLO") overview.df <- overview.df; overview.df <- overview.df[!is.na(overview.df$subgroup),]
-if (region_to_report == "COF") overview.df <- overview.df
-
+df <- subgrouping(region_to_report = region_to_report, gather=FALSE)
+overview.df <- left_join(df,region_key)
 
 
 df <- overview.df[!duplicated(overview.df[c("SHORT_NAME")]),]
