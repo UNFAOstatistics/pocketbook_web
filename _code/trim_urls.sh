@@ -1,7 +1,7 @@
 #!/bin/bash
 
-oldstring='href="/regions'
-newstring='href="http://koti.kapsi.fi/~muuankarski/fao/RSPB15/web/regions'
+oldstring='href="/books'
+newstring='href="http://koti.kapsi.fi/~muuankarski/fao/RSPB15/web/books'
 grep -rl $oldstring /home/markus/btsync/faosync/pocketbooks/pocketbook_web/_site | xargs sed -i s@$oldstring@$newstring@g
 
 

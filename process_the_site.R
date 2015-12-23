@@ -3,7 +3,7 @@
 
 # -- delete output/ -folder recursively
 unlink(paste0(root.dir.web,"/_process"), recursive = TRUE)
-unlink(paste0(root.dir.web,"/regions/"), recursive = TRUE)
+unlink(paste0(root.dir.web,"/books/"), recursive = TRUE)
 unlink(paste0(root.dir.web,"/datasets/"), recursive = TRUE)
 unlink(paste0(root.dir.web,"/figs/"), recursive = TRUE)
 
@@ -11,7 +11,7 @@ unlink(paste0(root.dir.web,"/figs/"), recursive = TRUE)
 # -- Create output folder if not exists --- #
 if (!file.exists(paste0(root.dir.web,"/_process"))) dir.create(paste0(root.dir.web,"/_process"))
 if (!file.exists(paste0(root.dir.web,"/_process/data"))) dir.create(paste0(root.dir.web,"/_process/data"))
-if (!file.exists(paste0(root.dir.web,"/regions/"))) dir.create(paste0(root.dir.web,"/regions/"))
+if (!file.exists(paste0(root.dir.web,"/books/"))) dir.create(paste0(root.dir.web,"/books/"))
 if (!file.exists(paste0(root.dir.web,"/datasets/"))) dir.create(paste0(root.dir.web,"/datasets/")) # for plot/table/map datas
 if (!file.exists(paste0(root.dir.web,"/figs/"))) dir.create(paste0(root.dir.web,"/figs/")) # for pdf plots
 
@@ -90,29 +90,29 @@ for (region_to_report in regionS_to_report) {
   }
   
 
-  if (!file.exists(paste0(root.dir.web,"/regions/",region_to_report))) dir.create(paste0(root.dir.web,"/regions/",region_to_report))
-  if (!file.exists(paste0(root.dir.web,"/regions/",region_to_report,"/figure"))) dir.create(paste0(root.dir.web,"/regions/",region_to_report,"/figure"))
+  if (!file.exists(paste0(root.dir.web,"/books/",region_to_report))) dir.create(paste0(root.dir.web,"/books/",region_to_report))
+  if (!file.exists(paste0(root.dir.web,"/books/",region_to_report,"/figure"))) dir.create(paste0(root.dir.web,"/books/",region_to_report,"/figure"))
   
   
   if (region_to_report %in% c("RAF","RAP","REU","RNE")) publication_year <- 2016
   if (region_to_report %in% c("COF","GLO")) publication_year <- 2015
   
   
-  knitr::knit("main.Rmd",output =paste0(root.dir.web,"regions/",region_to_report,"/index.md"))
-  if (region_to_report != "COF")knitr::knit("part1.Rmd",output =paste0(root.dir.web,"regions/",region_to_report,"/part1.md") )
-  if (region_to_report != "COF")knitr::knit("part2.Rmd",output =paste0(root.dir.web,"regions/",region_to_report,"/part2.md") )
-  if (region_to_report != "COF")knitr::knit("part3.Rmd",output =paste0(root.dir.web,"regions/",region_to_report,"/part3.md") )
-  if (region_to_report != "COF")knitr::knit("part4.Rmd",output =paste0(root.dir.web,"regions/",region_to_report,"/part4.md") )
-  if (region_to_report == "COF")knitr::knit("part5.Rmd",output =paste0(root.dir.web,"regions/",region_to_report,"/part5.md") )
-  if (region_to_report == "COF")knitr::knit("part6.Rmd",output =paste0(root.dir.web,"regions/",region_to_report,"/part6.md") )
-  knitr::knit("countryprofiles.Rmd",output =paste0(root.dir.web,"regions/",region_to_report,"/countryprofiles.md") )
-  knitr::knit("definitions.Rmd",output =paste0(root.dir.web,"regions/",region_to_report,"/definitions.md") )
-  knitr::knit("notes.Rmd",output =paste0(root.dir.web,"regions/",region_to_report,"/notes.md") )
+  knitr::knit("main.Rmd",output =paste0(root.dir.web,"books/",region_to_report,"/index.md"))
+  if (region_to_report != "COF")knitr::knit("part1.Rmd",output =paste0(root.dir.web,"books/",region_to_report,"/part1.md") )
+  if (region_to_report != "COF")knitr::knit("part2.Rmd",output =paste0(root.dir.web,"books/",region_to_report,"/part2.md") )
+  if (region_to_report != "COF")knitr::knit("part3.Rmd",output =paste0(root.dir.web,"books/",region_to_report,"/part3.md") )
+  if (region_to_report != "COF")knitr::knit("part4.Rmd",output =paste0(root.dir.web,"books/",region_to_report,"/part4.md") )
+  if (region_to_report == "COF")knitr::knit("part5.Rmd",output =paste0(root.dir.web,"books/",region_to_report,"/part5.md") )
+  if (region_to_report == "COF")knitr::knit("part6.Rmd",output =paste0(root.dir.web,"books/",region_to_report,"/part6.md") )
+  knitr::knit("countryprofiles.Rmd",output =paste0(root.dir.web,"books/",region_to_report,"/countryprofiles.md") )
+  knitr::knit("definitions.Rmd",output =paste0(root.dir.web,"books/",region_to_report,"/definitions.md") )
+  knitr::knit("notes.Rmd",output =paste0(root.dir.web,"books/",region_to_report,"/notes.md") )
   
   
   flist <- list.files(paste0(root.dir.web,"_process/figure"),
                       "+[.]png$",
                       full.names = TRUE)
-  file.copy(flist, paste0(root.dir.web,"/regions/",region_to_report,"/figure"), overwrite = TRUE)
+  file.copy(flist, paste0(root.dir.web,"/books/",region_to_report,"/figure"), overwrite = TRUE)
 
 }
